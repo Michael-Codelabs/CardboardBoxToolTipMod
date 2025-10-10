@@ -1,18 +1,26 @@
-Run the init script first
+# 📦 Cardboard Box Tooltips
 
-init.bat for Windows
+**WARNING:** This is a **Stationeers Launchpad Plugin Mod**.  
+It requires **BepInEx** to be installed with the Stationeers Launchpad plugin.  
+**Installation Guide:** [GitHub - StationeersLaunchPad](https://github.com/StationeersLaunchPad/StationeersLaunchPad)
 
-init.sh for Linux
+Cardboard Box Tooltips adds hover tooltips to cardboard boxes, displaying their contents directly in the extended item text — allowing for quick inventory checks without opening the box.
 
-This will pre-initialize the project files with your own mod name and namespace.
+## 🧩 Features
 
-Keep the mod naming to values like: ExampleMod, TimeDateMod, etc. following Class name conventions.
-https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-classes-structs-and-interfaces
+- **Extended Tooltips:** Hover over a cardboard box to see a list of its contents, including item names and stack quantities.
+- **Color Coded Display:** Item names and quantities are colorized for better readability.
+- **Empty Box Handling:** Clearly indicates if a box is empty or has no storage slots.
+- **Ignore List:** Default Stationeers package prefabs (e.g., PortablesPackage, ResidentialPackage, MiningPackage, etc.) are excluded since they already display contents.
+- **Limit Protection:** Displays up to 20 items (in case another mod expands box capacity).
 
-Keep the namespace to values like: Creator.Example, Jixxed.TimeDate, etc. following namespace conventions.
-https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-namespaces
+## 📝 Notes
 
-A unique namespace prevent conflicts with other mods and the game itself.
+- Tooltips only appear for **Cardboard Boxes** and integrate seamlessly with the item inspection UI.
+- Compatible with mods that expand box storage slots.
+- Dedicated Server Compatible.
 
-After that follow instructions here:
-https://github.com/ilodev/StationeersMods/blob/main/doc/CREATE-MOD-UNITY.md
+## ⚙️ Requirements
+
+- [Stationeers LaunchPad](https://github.com/StationeersLaunchPad/StationeersLaunchPad)
+- [BepInEx Framework](https://github.com/BepInEx/BepInEx)
