@@ -4,16 +4,31 @@ using Assets.Scripts.Objects;
 using Assets.Scripts.Objects.Items;
 using UnityEngine;
 using Assets.Scripts;
+using System.Collections.Generic;
 
 namespace lorex.patches
 {
   [HarmonyPatch(typeof(Item), nameof(Item.GetExtendedText))]
   public static class Item_GetExtendedText_Patch
   {
+
+    private static readonly HashSet<string> IgnoredPrefabs = new()
+    {
+      "ItemPortablesPackage",
+      "ItemInsulatedCanisterPackage",
+      "ItemWaterBottlePackage",
+      "ItemResidentialPackage",
+      "ItemMiningPackage",
+      "ItemCerealBarBox",
+    };
     public static void Postfix(Item __instance, ref StringBuilder __result)
     {
       // Only apply this to CardboardBoxes
       if (__instance is not CardboardBox box)
+        return;
+
+      string prefabName = __instance.GetPrefabName();
+      if (IgnoredPrefabs.Contains(prefabName))
         return;
 
       try
@@ -21,7 +36,6 @@ namespace lorex.patches
         if (__result == null)
           __result = new StringBuilder();
 
-        __result.AppendLine();
         __result.AppendLine("Contents:");
 
         var slots = box.Slots;
@@ -51,7 +65,16 @@ namespace lorex.patches
           string itemName = item.DisplayName ?? item.name ?? "Unknown Item";
           int quantity = (item is Stackable s && s.Quantity > 1) ? s.Quantity : 1;
 
-          __result.AppendLine($"  • {itemName}" + (quantity > 1 ? $" x{quantity}" : ""));
+          string colorItemHex = "#66FF00";    // Green for item name
+          string colorQuantityHex = "#FFED29"; // Yellow for quantity
+
+          string coloredItemName = $"<color={colorItemHex}>{itemName}</color>";
+          string coloredQuantity = $"<color={colorQuantityHex}>{quantity}</color>";
+
+          if (quantity > 1)
+            __result.AppendLine($"  • {coloredItemName} x{coloredQuantity}");
+          else
+            __result.AppendLine($"  • {coloredItemName}");
 
           if (itemCount >= maxDisplayCount)
           {

@@ -8,25 +8,39 @@
 		[b]WARNING:[/b] This is a Stationeers Launchpad Plugin Mod.
 		It requires BepInEx to be installed with the Stationeers Launchpad plugin.
 		Installation Guide: [url=https://github.com/StationeersLaunchPad/StationeersLaunchPad?tab=readme-ov-file#fresh[/url]
+
 		Cardboard Box Tooltips adds hover tooltips to cardboard boxes, displaying their contents directly in the extended item text for easy inventory management without opening the box.
+
 		[h2]Features[/h2]
 		[list]
 		[]Extended Tooltips: Hover over a cardboard box to see a list of its contents, including item names and quantities for stackable items.
+		[]Color Coded Display: Item names and quantities are now colorized for better readability.
 		[]Empty Box Handling: Clearly indicates if the box is empty or has no storage slots.
-		[]Limit Protection: Displays up to 20 items (incase a mod comes out that increases slots.)
+		[]Ignore List: Default Stationeers package prefabs (e.g., PortablesPackage, ResidentialPackage, etc.) are excluded since they already show contents.
+		[]Limit Protection: Displays up to 20 items (in case a mod increases box slots).
 		[/list]
+
 		[h2]Notes[/h2>
 		[list]
 		[]Tooltips only appear for cardboard boxes and integrate seamlessly with the existing item inspection UI.
 		[]Compatible with mods that expand box storage slots.
 		[*]Dedicated Server Compatible.
 		[/list]
+
 		[h2]Requirements[/h2]
 		[list]
 		[*]StationeersLaunchPad with BepInEx installed.
 		[/list]
 	</Description>
+	<WorkshopHandle>3582043479</WorkshopHandle>
 	<ChangeLog>
+		[h3]Version 1.0.1:[/h3]
+		[list]
+		[*]Added ignore list for default prefab packages to prevent duplicate content displays.
+		[*]Added color support for item names (green) and quantities (yellow).
+		[*]Minor performance and stability improvements.
+		[/list]
+
 		[h3]Version 1.0.0:[/h3]
 		[list]
 		[*]Initial release: Added tooltip support for cardboard box contents.
@@ -41,16 +55,21 @@
 	<LoadBefore />
 	<LoadAfter />
 	<InGameDescription>
-		<![CDATA[<size="30"><color=#ffa500> Cardboard Box Tooltips </color></size>
+		<![CDATA[
+<size="30"><color=#ffa500> Cardboard Box Tooltips </color></size>
 WARNING: <color=#ff0000>This is a Stationeers LaunchPad Plugin Mod. It requires Bepinex to be installed with the Stationeers Launchpad plugin.</color>
 Installation Guide: <color=#0cb3f5>github.com/StationeersLaunchPad/StationeersLaunchPad</color>
+
 <color=#02d1fa>[FEATURES]</color>
 <color=#1380bf>•</color> Hover tooltips showing cardboard box contents
-<color=#1380bf>•</color> Lists items with quantities for stacks
+<color=#1380bf>•</color> Color-coded item names and quantities
+<color=#1380bf>•</color> Excludes default package prefabs
 <color=#1380bf>•</color> Integrates with item inspection UI
+
 <color=#02d1fa>[NOTES]</color>
 <color=#c49c08>•</color> Only affects cardboard boxes
 <color=#c49c08>•</color> Dedicated Server Compatible
+
 <color=#02d1fa>[REQUIREMENTS]</color>
 <color=#22c933>•</color> StationeersLaunchPad + BepInEx
 ]]>
