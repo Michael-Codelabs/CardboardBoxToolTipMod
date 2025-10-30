@@ -34,16 +34,9 @@
 	</Description>
 	<WorkshopHandle>3582043479</WorkshopHandle>
 	<ChangeLog>
-		[h3]Version 1.0.1:[/h3]
+		[h3]Version 1.0.2:[/h3]
 		[list]
-		[*]Added ignore list for default prefab packages to prevent duplicate content displays.
-		[*]Added color support for item names (green) and quantities (yellow).
-		[*]Minor performance and stability improvements.
-		[/list]
-
-		[h3]Version 1.0.0:[/h3]
-		[list]
-		[*]Initial release: Added tooltip support for cardboard box contents.
+		[*]Added missing default food package to ignore list "ItemCerealBarBag"
 		[/list]
 	</ChangeLog>
 	<Tags>

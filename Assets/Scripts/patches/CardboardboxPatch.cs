@@ -20,6 +20,7 @@ namespace lorex.patches
       "ItemResidentialPackage",
       "ItemMiningPackage",
       "ItemCerealBarBox",
+      "ItemCerealBarBag",
     };
     public static void Postfix(Item __instance, ref StringBuilder __result)
     {
