@@ -34,9 +34,10 @@
 	</Description>
 	<WorkshopHandle>3582043479</WorkshopHandle>
 	<ChangeLog>
-		[h3]Version 1.0.2:[/h3]
+		[h3]Version 1.0.3:[/h3]
 		[list]
-		[*]Added missing default food package to ignore list "ItemCerealBarBag"
+		[*]Added missing default food package to ignore list "ItemWaterBottleBag"
+		[*]Fixed missing method exception
 		[/list]
 	</ChangeLog>
 	<Tags>

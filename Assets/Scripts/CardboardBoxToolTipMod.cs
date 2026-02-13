@@ -8,7 +8,7 @@ public class CardboardBoxToolTipMod : ModBehaviour
 {
   public override void OnLoaded(ContentHandler contentHandler)
   {
-    ConsoleWindow.Print("CardboardBoxToolTipMod says: Cardboard Boxes should have tooltips!");
+    UnityEngine.Debug.Log("CardboardBoxToolTipMod says: Cardboard Boxes should have tooltips!");
 
     Harmony harmony = new Harmony("CardboardBoxToolTipMod");
     PrefabPatch.prefabs = contentHandler.prefabs;

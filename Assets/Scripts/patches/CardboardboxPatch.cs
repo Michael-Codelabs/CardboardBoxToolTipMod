@@ -17,6 +17,7 @@ namespace lorex.patches
       "ItemPortablesPackage",
       "ItemInsulatedCanisterPackage",
       "ItemWaterBottlePackage",
+      "ItemWaterBottleBag",
       "ItemResidentialPackage",
       "ItemMiningPackage",
       "ItemCerealBarBox",
@@ -89,7 +90,7 @@ namespace lorex.patches
       }
       catch (System.Exception ex)
       {
-        ConsoleWindow.Print($"[CardboardBoxToolTipMod] Error in Item_GetExtendedText_Patch: {ex}", System.ConsoleColor.DarkRed);
+        UnityEngine.Debug.Log($"[CardboardBoxToolTipMod] Error in Item_GetExtendedText_Patch: {ex}");
       }
     }
   }
